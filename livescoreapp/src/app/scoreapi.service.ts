@@ -11,10 +11,13 @@ export class ScoreapiService {
 
   constructor(private http: HttpClient) { }
   private _postsURL = "https://cricapi.com/api/matches?apikey=6QuosyAP5bN5EaglBrhXXPdPsM23";
-  public scoreapiobject;
-
+  
+  private extractData(res: Response) {
+    let body = res;
+    return body || { };
+  }
   getPosts():Observable<IPosts[]>{
-    return this.http.get<IPosts[]>(this._postsURL).pipe(map(x=>{console.log(x);return x;}));
+    return this.http.get<IPosts[]>(this._postsURL);
 }
 
   private handleError(error: Response) {

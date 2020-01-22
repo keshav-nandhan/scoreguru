@@ -5,5 +5,35 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-
+  <p></p>
+</div>
+<!-- <div>
+  <p>{{scoreapiobj|json}}</p>
+</div> -->
+<accordion>
+  <accordion-group heading="Static Header">
+    This content is straight in the template.
+  </accordion-group>
+  <accordion-group heading="Another group">
+    <p>Some content</p>
+  </accordion-group>
+</accordion>
+<div class="card">
+<div class="card-body" *ngFor="let item of scoreapiobj.matches">
+  <accordion>
+    <accordion-group heading="{{item['team-2']}} vs {{item['team-1']}}">
+      {{item.date}}
+      {{item.toss_winner_team}}
+    </accordion-group>
+  </accordion>
+  <p>{{item.unique_id}}</p>
+  <p>{{item.date}}</p>
+  <p>{{item.toss_winner_team}}</p>
+  <p>{{item["team-1"]}}</p>
+  <p>{{item["team-2"]}}</p>
+  <p>{{item.matchStarted}}</p>
+</div>
+</div>
+<div>
 <router-outlet></router-outlet>
+</div>
