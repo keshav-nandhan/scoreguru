@@ -1,0 +1,14 @@
+  <div class="card">
+  <div class="card-body" *ngFor="let item of scoreapiobj['matches']">
+    <accordion [isAnimated]="true" [closeOthers]="true">
+      <accordion-group heading="{{item['team-2']}} vs {{item['team-1']}}">
+    <p [innerHTML]="getmatchscore(item.unique_id)"></p>
+    <p>{{item.date}}</p>
+    <p>{{item.toss_winner_team}}</p>
+    <p>{{item.matchStarted}}</p>
+      </accordion-group>
+    </accordion>
+    
+  </div>
+  </div>
+  

@@ -7,20 +7,10 @@ import { Observable } from 'rxjs';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent implements OnInit {
-  constructor(private serviceobj:ScoreapiService){};
+  constructor(){};
   title = 'livescoreapp';
-
-  scoreapiobj:IPosts[];
   ngOnInit(){
-    this.getscore();
   }
-
-  getscore(){
-    this.serviceobj.getPosts().subscribe(data=>{
-      this.scoreapiobj=data;
-      console.log(this.scoreapiobj)});
-    return this.scoreapiobj;
-  }
-  
 }
